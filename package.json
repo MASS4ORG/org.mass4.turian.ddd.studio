@@ -1,0 +1,31 @@
+{
+  "id": "org.mass4.turian.ddd.studio",
+  "version": "1.0.0",
+  "displayName": "DataAsset-Driven Design Studio",
+  "description": "Asset creation, live values, event tracing and wire validation.",
+  "author": "MASS4",
+  "license": "MPL-2.0",
+  "scopes": [
+    "studio"
+  ],
+  "categories": [
+    "turian:editor"
+  ],
+  "roles": {
+    "source": "Brick~/Source",
+    "tests": "Brick~/Tests",
+    "precast": "Brick~/Precast"
+  },
+  "exclude": [
+    "Brick~/Tests",
+    ".github",
+    ".gitignore",
+    ".script-*.py",
+    ".script-*.cs",
+    ".script-*.sh"
+  ],
+  "bake": "auto",
+  "dependencies": {
+    "org.mass4.turian.ddd": "0.2.0"
+  }
+}

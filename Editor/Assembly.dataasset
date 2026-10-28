@@ -1,0 +1,12 @@
+{
+  "__TypeId": "ca028d68-85a9-5f3d-ad2f-c54db757d6fa",
+  "Name": "Turian.Editor.DataAssetDriven",
+  "RootNamespace": "Turian.Editor.DataAssetDriven",
+  "Id": "82a15c70-c0a0-4c47-a182-f8bf2a5d6079",
+  "EditorOnly": true,
+  "References": [
+    {
+      "AssetId": "214a52ee-45aa-4757-a931-099c11e55a6e"
+    }
+  ]
+}

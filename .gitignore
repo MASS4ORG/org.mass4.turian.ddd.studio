@@ -1,0 +1,5 @@
+Brick~/Precast/
+Brick~/Bake/
+bin/
+obj/
+.script-*
