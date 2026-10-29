@@ -26,6 +26,6 @@
   ],
   "bake": "auto",
   "dependencies": {
-    "org.mass4.turian.ddd": "0.2.0"
+    "org.mass4.turian.ddd": "^1.0.0"
   }
 }

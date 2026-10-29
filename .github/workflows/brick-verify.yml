@@ -5,5 +5,6 @@ jobs:
   verify:
     uses: MASS4ORG/brick-workflows/.github/workflows/verify.yml@v1
     with:
+      twin: false
       source-test-dependency: '{"repository":"MASS4ORG/org.mass4.turian.ddd","ref":"v1.0.0","path":"org.mass4.turian.ddd"}'
       source-tests: Brick~/Tests/Turian.DataAssetDriven.Studio.Tests/Turian.DataAssetDriven.Studio.Tests.csproj
