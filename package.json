@@ -5,12 +5,11 @@
   "description": "Asset creation, live values, event tracing and wire validation.",
   "author": "MASS4",
   "license": "MPL-2.0",
-  "scopes": [
-    "studio"
-  ],
-  "categories": [
-    "turian:editor"
-  ],
+  "scopes": ["studio"],
+  "categories": ["turian:editor"],
+  "dependencies": {
+    "org.mass4.turian.ddd": "^1.0.0"
+  },
   "roles": {
     "source": "Brick~/Source",
     "tests": "Brick~/Tests",
@@ -20,12 +19,11 @@
     "Brick~/Tests",
     ".github",
     ".gitignore",
+    ".local",
     ".script-*.py",
     ".script-*.cs",
-    ".script-*.sh"
+    ".script-*.sh",
+    ".script-*.ps1"
   ],
-  "bake": "auto",
-  "dependencies": {
-    "org.mass4.turian.ddd": "^1.0.0"
-  }
+  "bake": "auto"
 }
