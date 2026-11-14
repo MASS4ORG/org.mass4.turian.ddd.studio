@@ -1,6 +1,6 @@
 {
   "id": "org.mass4.turian.ddd.studio",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "displayName": "DataAsset-Driven Design Studio",
   "description": "Asset creation, live values, event tracing and wire validation.",
   "author": "MASS4",
