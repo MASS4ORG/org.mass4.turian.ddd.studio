@@ -17,7 +17,7 @@
     <ItemGroup>
         <ProjectReference Include="$(GuinevereLocalPath)/Guinevere.Excalibur/Guinevere.Excalibur.csproj"
                           Condition="'$(GuinevereLocalPath)' != ''"/>
-        <PackageReference Include="MASS4.Guinevere.Excalibur" Version="6.*"
+        <PackageReference Include="MASS4.Guinevere.Excalibur" Version="[7.0.0]"
                           Condition="'$(GuinevereLocalPath)' == ''"/>
     </ItemGroup>
     <Target Name="PrecastEditorAssemblies" AfterTargets="Build"

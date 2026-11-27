@@ -29,13 +29,15 @@ public sealed class DataAssetTypeGeneratorPanel(SettingsService settings, Func<l
             return;
         }
         Line(gui, "Type prefix (e.g. Damage)");
-        prefix = gui.TextInput(prefix, width: 0, placeholder: "Type prefix, e.g. Damage", id: "ddd/types/prefix");
+        gui.TextInput(ref prefix, placeholder: "Type prefix, e.g. Damage", id: "ddd/types/prefix").ExpandWidth();
         Line(gui, "Existing payload type (e.g. MyGame.Damage)");
-        payload = gui.TextInput(payload, width: 0, placeholder: "Payload type, e.g. MyGame.Damage", id: "ddd/types/payload");
+        gui.TextInput(ref payload, placeholder: "Payload type, e.g. MyGame.Damage", id: "ddd/types/payload")
+            .ExpandWidth();
         Line(gui, "Generated C# namespace");
-        typeNamespace = gui.TextInput(typeNamespace, width: 0, placeholder: "C# namespace", id: "ddd/types/namespace");
+        gui.TextInput(ref typeNamespace, placeholder: "C# namespace", id: "ddd/types/namespace").ExpandWidth();
         Line(gui, "Output folder inside Assets");
-        folder = gui.TextInput(folder, width: 0, placeholder: "Destination folder inside Assets", id: "ddd/types/folder");
+        gui.TextInput(ref folder, placeholder: "Destination folder inside Assets", id: "ddd/types/folder")
+            .ExpandWidth();
         gui.Checkbox(ref events, "Event", id: "ddd/types/events");
         gui.Checkbox(ref variables, "Variable", id: "ddd/types/variables");
         gui.Checkbox(ref constants, "Constant", id: "ddd/types/constants");

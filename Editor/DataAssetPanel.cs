@@ -82,7 +82,7 @@ sealed partial class DataAssetPanel : IPanel, IDisposable
     void Variable(Gui gui, DataAsset current, IDataAssetValue shared)
     {
         Line(gui, $"Live value: {shared.ReadValue()}");
-        value = gui.TextInput(value, placeholder: "Runtime value", id: "ddd/value");
+        gui.TextInput(ref value, placeholder: "Runtime value", id: "ddd/value");
         if (Button(gui, "Apply runtime value", "ddd/apply"))
         {
             var typed = ParseValue(current, value);

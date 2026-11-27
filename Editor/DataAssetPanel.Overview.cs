@@ -12,9 +12,9 @@ sealed partial class DataAssetPanel
     bool orphanOnly;
     int typeIndex;
     Guid[] typeIds = [];
-    string[] typeNames = [];
+    Content[] typeNames = [];
     int createIndex;
-    string[] createNames = [];
+    Content[] createNames = [];
     IReadOnlyList<AssetCreationKind> createKinds = [];
     string folder = "";
     string count = "1";
@@ -26,8 +26,8 @@ sealed partial class DataAssetPanel
         var root = project.AssetsAbsoluteDir;
         if (indexedRoot != root) { RefreshOverview(root); }
         if (Button(gui, "Refresh DDD assets", "ddd/refresh")) { RefreshOverview(root); }
-        search = gui.TextInput(search, placeholder: "Search DDD assets", id: "ddd/search");
-        gui.Dropdown(typeNames, ref typeIndex, width: 0, placeholder: "All DDD types");
+        gui.TextInput(ref search, placeholder: "Search DDD assets", id: "ddd/search");
+        gui.Dropdown(typeNames, ref typeIndex, placeholder: "All DDD types").ExpandWidth();
         gui.Checkbox(ref orphanOnly, "No authored references");
         var type = typeIndex > 0 && typeIndex <= typeIds.Length ? typeIds[typeIndex - 1] : Guid.Empty;
         OverviewAssets(gui, type);
@@ -64,7 +64,7 @@ sealed partial class DataAssetPanel
     {
         createKinds = creation is null ? []
             : creation.Kinds.Where(static kind => kind.MenuPath.StartsWith("DDD/", StringComparison.Ordinal)).ToArray();
-        createNames = createKinds.Select(static kind => kind.MenuPath[4..]).ToArray();
+        createNames = [.. createKinds.Select(static kind => kind.MenuPath[4..])];
         createIndex = Math.Clamp(createIndex, 0, Math.Max(0, createNames.Length - 1));
     }
 
@@ -72,9 +72,9 @@ sealed partial class DataAssetPanel
     {
         if (creation is null || createKinds.Count == 0) { return; }
         Line(gui, "Bulk creation");
-        gui.Dropdown(createNames, ref createIndex, width: 0, placeholder: "Asset type");
-        folder = gui.TextInput(folder, placeholder: "Folder inside Assets", id: "ddd/createFolder");
-        count = gui.TextInput(count, placeholder: "Count (1–100)", id: "ddd/createCount");
+        gui.Dropdown(createNames, ref createIndex, placeholder: "Asset type").ExpandWidth();
+        gui.TextInput(ref folder, placeholder: "Folder inside Assets", id: "ddd/createFolder");
+        gui.TextInput(ref count, placeholder: "Count (1–100)", id: "ddd/createCount");
         if (Button(gui, "Create assets", "ddd/createMany"))
         {
             try
